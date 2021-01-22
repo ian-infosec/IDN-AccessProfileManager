@@ -42,7 +42,12 @@ namespace Access_Profile_Manager
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblClipboardNotice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoadEntitlements
@@ -128,6 +133,7 @@ namespace Access_Profile_Manager
             this.dgView.Name = "dgView";
             this.dgView.Size = new System.Drawing.Size(720, 205);
             this.dgView.TabIndex = 15;
+            this.dgView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgView_CellContentClick);
             // 
             // label1
             // 
@@ -156,11 +162,45 @@ namespace Access_Profile_Manager
             this.label3.TabIndex = 18;
             this.label3.Text = "Access Profile Source:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configurationToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // configurationToolStripMenuItem
+            // 
+            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configurationToolStripMenuItem.Text = "Configuration";
+            this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
+            // 
+            // lblClipboardNotice
+            // 
+            this.lblClipboardNotice.AutoSize = true;
+            this.lblClipboardNotice.Location = new System.Drawing.Point(33, 419);
+            this.lblClipboardNotice.Name = "lblClipboardNotice";
+            this.lblClipboardNotice.Size = new System.Drawing.Size(0, 13);
+            this.lblClipboardNotice.TabIndex = 20;
+            // 
             // APManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblClipboardNotice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -174,10 +214,14 @@ namespace Access_Profile_Manager
             this.Controls.Add(this.lblAPName);
             this.Controls.Add(this.txtAPID);
             this.Controls.Add(this.btnLoadEntitlements);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "APManagerForm";
             this.Text = "Access Profile Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +241,10 @@ namespace Access_Profile_Manager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
+        private System.Windows.Forms.Label lblClipboardNotice;
     }
 }
 
